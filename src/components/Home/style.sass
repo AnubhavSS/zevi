@@ -1,0 +1,93 @@
+.main_container
+  height:100vh
+  display: flex
+  flex-direction: column
+  align-items: center
+  background-image: url('./clothes.jpg')
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center 
+ 
+    
+.searchBarSS
+   width: 50vw
+   padding-left: 1.25rem
+   padding-right: 1.25rem
+   padding-top: 0.75rem
+   padding-bottom: 0.75rem
+   font-size: 1.125rem
+   outline: none
+   border: 1px white solid
+   margin-top: 10vh
+   margin-left: 10px
+   border-start-start-radius: 12px
+   border-end-start-radius: 12px
+
+
+.searchIcon 
+  padding-left: 1.25rem
+  padding-right: 1.25rem
+  padding-top: 0.75rem
+  padding-bottom: 0.75rem
+  font-size: 20px
+  border-end-end-radius: 12px
+  border-start-end-radius: 12px
+  background-color: white
+  margin-top: 10vh
+  cursor: pointer
+  
+
+.dropdown
+  width: 60vw  
+  padding-left: 20px
+  padding-bottom:40px
+  background-color: #fff
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)
+  border-radius:2px
+  height:50vh
+  overflow-y: scroll
+  margin-top: 10px
+
+  @media (max-width: 640px)
+    height:30vh
+
+.popular
+  font-weight:600
+ 
+.dropdownRow
+  cursor: pointer 
+  &:hover
+    background-color: rgba(0, 0, 0, 0.1)
+    border-radius:10px
+    padding-left:3px
+  padding: 2px  
+  font-size: 14px
+  font-weight:300
+
+
+.prodContainer
+    height:254px
+    width:165px
+    margin-left:2px
+    margin-right:2px
+    cursor:pointer
+    
+    p
+     font-weight:300
+     font-size:12px
+     color: #000000
+
+    img
+       height:254px
+       width:165px
+       border-radius:4px
+
+.trends
+   display: flex
+   flex-direction: row
+   justify-content:evenly
+   margin-bottom:50px
+
+   @media (max-width: 640px)
+    display: none 
+  

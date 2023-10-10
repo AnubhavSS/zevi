@@ -1,0 +1,119 @@
+// Define variables for breakpoint values (optional but recommended)
+$small-screen: 640px
+$medium-screen: 768px
+$large-screen: 1024px
+
+.mainContainer
+  padding-left: 1.25rem
+  padding-right: 1.25rem
+  padding-top: 1px
+  padding-bottom: 6rem
+  display: flex
+  flex-direction: row
+
+  @media (max-width: $small-screen)
+     display: flex
+     flex-direction: column
+
+.card
+  padding:4px
+  margin:4px
+  height:450px
+  @media (min-width: $medium-screen)
+    width: 239px 
+
+  @media (max-width: $small-screen)
+    width: 239px 
+
+
+
+.bottomBar
+  position: absolute
+  z-index: 1
+  width: 100%
+  top: 278px
+  height: 47px
+  display: flex  
+  justify-content: center 
+  align-items: center 
+  background-color: rgba(109, 132, 255, 0.7)
+  color:#FFFFFF
+  font-size: 20px
+  cursor:pointer
+
+.imageContainer
+   display: block
+   overflow: hidden
+   position: relative
+   border-radius: 0.25rem
+   height: 325px
+
+.heart
+    position: absolute
+    top: 2
+    right: 0
+    z-index: 1  // Adjust the z-index value as needed to control layering
+    margin:10px
+    cursor:pointer
+    height:32px
+    width:32px
+
+.image
+    display: block
+    object-fit: cover
+    object-position: center
+    width: 100%
+    height: 100%
+    position: absolute
+
+.name
+   font-size: 20px
+   color: #000000 
+   font-weight: 500      
+
+.price
+   font-size: 20px
+   font-weight: 700 
+   color: #6D84FF
+
+.oldPrice
+   color: rgba(0, 0, 0, 0.4)
+   margin-right:7px
+   text-decoration: line-through
+
+.searchContainer
+  display: flex
+  align-items: center
+
+.searchResult
+  font-weight: 400
+  font-size: 40px
+  color: #000000
+  margin-right: 15px  
+  margin-left: 25px 
+
+.filterIcon
+  font-size: 20px
+  margin-top: 15px
+  display: none  
+
+  @media (max-width: $small-screen)
+    display: block  
+
+.filter
+   width:269px
+   display: block 
+
+.searchBar
+  width: 50vw
+  padding-left: 1.25rem
+  padding-right: 1.25rem
+  padding-top: 0.75rem
+  padding-bottom: 0.75rem
+  font-size: 1.125rem
+  outline: none
+  border: 1px solid rgba(0, 0, 0, 0.5)
+  margin: 40px auto 0 auto 
+  border-radius: 14px
+  display: flex
+  justify-content: center
