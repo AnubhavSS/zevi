@@ -5,8 +5,6 @@ import { AiFillFilter } from "react-icons/ai";
 import Card from "../Card";
 import Filter from "../Filter";
 
-
-
 export interface Product {
   id: string;
   name: string;
@@ -15,12 +13,11 @@ export interface Product {
 }
 
 const Results: FC = () => {
+  const isSmallScreen = window.innerWidth < 768;
 
-    const isSmallScreen = window.innerWidth < 768;
-    
-    const [search, setsearch] = useState("");
+  const [search, setsearch] = useState("");
   const [values, setValues] = useState<Product[]>([]);
-  const [showFilter, setshowFilter] = useState<boolean>(false)
+  const [showFilter, setshowFilter] = useState<boolean>(false);
 
   useEffect(() => {
     setValues([]);
@@ -41,28 +38,39 @@ const Results: FC = () => {
     }
   }, [search]); // Empty dependency array to run only once on component mount
 
-const handleClick=()=>{
-    setshowFilter(prev=>!prev); 
-    
-    
-}
+  const handleClick = () => {
+    setshowFilter((prev) => !prev);
+  };
 
   return (
     <div>
-        <input
-            type="text"
-            placeholder="Search "
-            className="searchBar"
-            onChange={(e) => setsearch(e.target.value)}
-            value={search}
-          />
-    <div className="searchContainer">
-  <p className="searchResult">Search Result</p>
-  <div className="filterIcon"  onClick={handleClick}><AiFillFilter /></div>
-</div>
+      <input
+        type="text"
+        placeholder="Search "
+        className="searchBar"
+        onChange={(e) => setsearch(e.target.value)}
+        value={search}
+      />
+      <div className="searchContainer">
+        <p className="searchResult">Search Result</p>
+        <div className="filterIcon" onClick={handleClick}>
+          <AiFillFilter />
+        </div>
+      </div>
       <div className="mainContainer">
-      { isSmallScreen?<div className={`filter`} style={{display:`${showFilter?'block':'none'}`}}><Filter /></div>: <div className={`filter`}><Filter /></div>}
-        <div >
+        {isSmallScreen ? (
+          <div
+            className={`filter`}
+            style={{ display: `${showFilter ? "block" : "none"}` }}
+          >
+            <Filter />
+          </div>
+        ) : (
+          <div className={`filter`}>
+            <Filter />
+          </div>
+        )}
+        <div>
           <div
             style={{
               display: "flex",

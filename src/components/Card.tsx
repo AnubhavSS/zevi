@@ -8,25 +8,30 @@ type ITEM = {
 
 const Card: FC<ITEM> = ({ item }) => {
   const [heart, setheart] = useState<boolean>(false);
-  const [viewDetail, setviewDetail] = useState<boolean>(false)
+  const [viewDetail, setviewDetail] = useState<boolean>(false);
 
   return (
-    <div className="card" key={item.id} onMouseEnter={()=>setviewDetail(true)} onMouseLeave={()=>setviewDetail(false)}>
+    <div
+      className="card"
+      key={item.id}
+      onMouseEnter={() => setviewDetail(true)}
+      onMouseLeave={() => setviewDetail(false)}
+    >
       <div className="imageContainer">
         {heart ? (
           <AiFillHeart
             className="heart"
-            style={{ color: "#D32424",cursor:'pointer' }}
+            style={{ color: "#D32424", cursor: "pointer" }}
             onClick={() => setheart((prev) => !prev)}
           />
         ) : (
           <AiOutlineHeart
             className="heart"
-            style={{ color: "#FFF",cursor:'pointer' }}
+            style={{ color: "#FFF", cursor: "pointer" }}
             onClick={() => setheart((prev) => !prev)}
           />
         )}
-       {viewDetail && <div className="bottomBar">View Details</div>}
+        {viewDetail && <div className="bottomBar">View Details</div>}
         <img alt="ecommerce" className="image" src={item.image} />
       </div>
       <div style={{ marginTop: 4 }}>
