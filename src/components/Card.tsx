@@ -40,12 +40,13 @@ const Card: FC<ITEM> = ({ item }) => {
           <span className="oldPrice">Rs.{parseInt(item.price) + 200}</span>
           Rs.{parseInt(item.price)}
         </h2>
-        <div style={{ color: "#FDD33D" }}>
+        <div style={{ color: "#FDD33D", display:'flex',flexDirection:'row' }}>
           <AiFillStar />
           <AiFillStar />
           <AiFillStar />
           <AiFillStar />
           <AiFillStar />
+          <span className="infoNm">(210)</span>
         </div>
       </div>
     </div>

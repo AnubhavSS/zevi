@@ -90,7 +90,7 @@ const Home: FC = () => {
           <div className="dropdown">
             <p className="popular">Latest Trends</p>
             <div className="trends">
-            { prod.slice(0,4).map((item)=>{return(
+            { prod.slice(0,5).map((item)=>{return(
             <div className="prodContainer" key={item.id} onClick={handleClick}>
               <img src={item.image} alt={item.name}/>
               <p>{item.name}</p>
